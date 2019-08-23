@@ -1,0 +1,44 @@
+#6. Escreva um programa que peça o tipo e a quantidade de carne comprada pelo usuário e gere um cupom fiscal, contendo as informações da compra: tipo e quantidade de carne, preço total, tipo de pagamento, valor do desconto e valor a pagar.
+
+formaPagamento = int(input("pagamento com carta tabajara: 1-sim, 2-nao: "))
+tipoCarne = int(input("1-file, 2-alcatra, 3-picanha: "))
+qtdCarne = float(input("quantos kilos: ")) 
+valor = 0
+
+if qtdCarne <= 5:
+  if tipoCarne == 1:
+    tipoCarne = "file"
+    valor = qtdCarne * 4.90
+  elif tipoCarne == 2:
+    tipoCarne = "alcatra"
+    valor = qtdCarne * 5.90
+  elif tipoCarne == 3:
+    tipoCarne = "picanha"
+    valor = qtdCarne * 6.90  
+else:
+  if tipoCarne == 1:
+    tipoCarne = "file"
+    valor = qtdCarne * 5.80
+  elif tipoCarne == 2:
+    tipoCarne = "alcatra"
+    valor = qtdCarne * 6.80
+  elif tipoCarne == 3:
+    tipoCarne = "picanha"
+    valor = qtdCarne * 7.80  
+aux = valor*0.05
+
+print("-------------------")
+print("tipo de carne: ",tipoCarne)
+print("quantidade de carne: ",qtdCarne,"kg")
+print("preço total: ", round(valor,2))
+
+
+if formaPagamento==1:
+  print("tipo de pagamento: cartao") 
+  print("valor do desconto: ", round(aux,2))
+  print("valor a pagar: ", round(valor-aux,2)) 
+else:
+  print("tipo de pagamento: dinheiro") 
+  print("valor do desconto: ", round(valor - valor))
+  print("valor a pagar: ", round(valor,2)) 
+  

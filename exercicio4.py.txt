@@ -1,0 +1,39 @@
+#4. Faça um Programa que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:par ou ímpar; positivo ou negativo; inteiro ou decimal.
+
+n1 = float(input("numero1: "))
+n2 = float(input("numero2: "))
+
+operacao = 1
+while operacao > 0 and operacao < 5:
+ operacao = int(input("1-soma, 2-subtracao, 3-divisa, 4-multiplicacao: \n"))
+ if operacao == 1:
+   resultado=n1+n2
+   break
+ if operacao == 2:
+   resultado=n1-n2
+   break
+ if operacao == 3:
+   resultado=n1/n2
+   break
+ if operacao == 4:
+   resultado=n1*n2
+   break
+
+print("-------------------")
+if resultado%2 == 0:
+  print(round(resultado,2), "numero par")
+else:
+  print(round(resultado,2),"numero impar")
+
+if resultado < 0:
+  print(round(resultado,2),"numero negativo")
+else:
+  print(round(resultado,2),"numero positivo")
+
+if resultado == int(resultado):
+  print("numero inteiro")
+else:
+  print("numero decimal")
+
+
+
